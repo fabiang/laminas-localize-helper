@@ -23,7 +23,7 @@
         }
     },
     "require-dev": {
-        "behat/behat": "^3.2",
+        "behat/behat": "^3.2.1",
         "phpunit/phpunit": "^4.8.26 || ^5.5.5",
         "zendframework/zend-i18n": "^2.0",
         "zendframework/zend-modulemanager": "^2.7",

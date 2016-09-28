@@ -65,14 +65,21 @@ class FeatureContext implements Context
      */
     public function getApplication()
     {
-        return Application::init([
-            'modules'                 => [
+        $modules = [];
+
+        // ZF3
+        if (class_exists('Zend\I18n\Module')) {
+            $modules = [
                 'Zend\I18n',
                 'Zend\Mvc\I18n',
                 'Zend\Validator',
                 'Zend\Filter',
                 'Zend\Router',
-            ],
+            ];
+        }
+
+        return Application::init([
+            'modules'                 => $modules,
             'module_listener_options' => [
                 'extra_config' => [
                     'translator' => [
