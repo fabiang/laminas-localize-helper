@@ -22,7 +22,7 @@ before_install:
   - composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN
 
 install:
-  - if [[ $PREFER_LOWEST -ne "" || ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then composer up --ignore-platform-reqs && composer remove --ignore-platform-req --dev zendframework/zend-mvc-i18n; fi
+  - if [[ $PREFER_LOWEST -ne "" || ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then composer up --ignore-platform-reqs && composer remove --ignore-platform-reqs --dev zendframework/zend-mvc-i18n; fi
   - composer update --no-interaction --prefer-stable $PREFER_LOWEST
 
 script:
