@@ -13,7 +13,7 @@
     "require": {
         "php": "^5.5 || ^7.0",
         "zendframework/zend-filter": "^2.0",
-        "zendframework/zend-servicemanager": "^2.7 || ^3.0",
+        "zendframework/zend-servicemanager": "^2.7.6 || ^3.0",
         "zendframework/zend-validator": "^2.0",
         "zendframework/zend-view": "^2.0"
     },
@@ -24,9 +24,9 @@
     },
     "require-dev": {
         "behat/behat": "^3.2",
-        "phpunit/phpunit": "^5.5",
-        "zendframework/zend-i18n": "^2.7",
-        "zendframework/zend-mvc": "^3.0",
+        "phpunit/phpunit": "^4.8.26 || ^5.5.5",
+        "zendframework/zend-i18n": "^2.0",
+        "zendframework/zend-mvc": "^2.0 || ^3.0",
         "zendframework/zend-mvc-i18n": "^1.0"
     },
     "autoload-dev": {

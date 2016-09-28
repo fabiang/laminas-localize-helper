@@ -4,7 +4,7 @@ sudo: false
 
 cache:
   directories:
-    - $HOME/.composer/cache
+    - $HOME/.config/composer/cache
 
 env:
   matrix:
@@ -22,6 +22,7 @@ before_install:
   - composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN
 
 install:
+  - if [[ $PREFER_LOWEST -ne "" ]]; then composer up && composer remove --dev zendframework/zend-mvc-i18n; fi
   - composer update --no-interaction --prefer-stable $PREFER_LOWEST
 
 script:

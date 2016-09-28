@@ -80,6 +80,11 @@ final class LocaleInitializerTest extends TestCase
      */
     public function testInitialize()
     {
+        $sm = new ServiceManager();
+        if (!method_exists($sm, 'getServiceLocator')) {
+            $this->markTestSkipped();
+        }
+
         $validator  = $this->prophesize(Validator::class);
         $validator->setLocale('en_US')->shouldBeCalled();
 
