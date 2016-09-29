@@ -8,8 +8,8 @@ cache:
 
 env:
   matrix:
-    - PREFER_LOWEST="--prefer-lowest"
     - PREFER_LOWEST=""
+    - PREFER_LOWEST="--prefer-lowest"
 
 php:
   - 7
