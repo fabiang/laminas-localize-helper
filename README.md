@@ -7,6 +7,7 @@ This module works with Zend Framework 2 and 3, but
 `zendframework/zend-servicemanager` must be at least at version 2.7.6.
 
 [![Build Status](https://travis-ci.org/fabiang/zf-localize-helper.svg?branch=master)](https://travis-ci.org/fabiang/zf-localize-helper)
+[![Latest Stable Version](https://poser.pugx.org/fabiang/zf-localize-helpert/version)](https://packagist.org/packages/fabiang/zf-localize-helper)
 [![License](https://poser.pugx.org/fabiang/zf-localize-helper/license)](https://packagist.org/packages/fabiang/zf-localize-helper)
 
 ## Requirements
