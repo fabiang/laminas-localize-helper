@@ -27,12 +27,12 @@
         "zendframework/zend-console": "^2.6",
         "zendframework/zend-escaper": "^2.5",
         "zendframework/zend-http": "^2.5",
-        "zendframework/zend-i18n": "^2.0",
-        "zendframework/zend-log": "^2.9",
+        "zendframework/zend-i18n": "^2.7",
+        "zendframework/zend-log": "^2.8",
         "zendframework/zend-modulemanager": "^2.7",
         "zendframework/zend-mvc": "^2.0 || ^3.0",
-        "zendframework/zend-mvc-i18n": "^1.0",
-        "zendframework/zend-serializer": "^2.8",
+        "zendframework/zend-mvc-i18n": "^0.1.0 || ^1.0",
+        "zendframework/zend-serializer": "^2.7",
         "zendframework/zend-view": "^2.8"
     },
     "autoload-dev": {
