@@ -42,9 +42,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @When I request validator :name from :pluginManager
+     * @When I request plugin :name from :pluginManager
      */
-    public function iRequestValidatorFrom($name, $pluginManager)
+    public function iRequestPluginFrom($name, $pluginManager)
     {
         $this->plugin = $this->getApplication()
             ->getServiceManager()
@@ -53,9 +53,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then Locale of validator should be :locale
+     * @Then Locale of plugin should be :locale
      */
-    public function localeOfValidatorShouldBe($locale)
+    public function localeOfPluginShouldBe($locale)
     {
         Assert::assertSame($locale, $this->plugin->getLocale());
     }
