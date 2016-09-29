@@ -3,14 +3,14 @@
 Initializer that passes your configured locale to all view helpers, validators
 and filters, so you don't have to do this every time.
 
-This module works with Zend Framework 2 and 3, but
-`zendframework/zend-servicemanager` must be at least at version 2.7.6.
-
 [![Build Status](https://travis-ci.org/fabiang/zf-localize-helper.svg?branch=master)](https://travis-ci.org/fabiang/zf-localize-helper)
 [![Latest Stable Version](https://poser.pugx.org/fabiang/zf-localize-helper/version)](https://packagist.org/packages/fabiang/zf-localize-helper)
 [![License](https://poser.pugx.org/fabiang/zf-localize-helper/license)](https://packagist.org/packages/fabiang/zf-localize-helper)
 
 ## Requirements
+
+This module works with Zend Framework 2 and 3, but
+`zendframework/zend-servicemanager` must be at least at version 2.7.6.
 
 Please see the [composer.json](composer.json) file.
 
