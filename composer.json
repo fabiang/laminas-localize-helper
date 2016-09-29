@@ -3,6 +3,12 @@
     "description": "Zend Framework module for setting locale to all view helpers, validators and filters",
     "type": "library",
     "license": "BSD-2-Clause",
+    "keywords": [
+        "Zend Framework",
+        "I18n",
+        "Translation",
+        "Localization"
+    ],
     "authors": [
         {
             "name": "Fabian Grutschus",

@@ -7,6 +7,7 @@ This module works with Zend Framework 2 and 3, but
 `zendframework/zend-servicemanager` must be at least at version 2.7.6.
 
 [![Build Status](https://travis-ci.org/fabiang/zf-localize-helper.svg?branch=master)](https://travis-ci.org/fabiang/zf-localize-helper)
+[![License](https://poser.pugx.org/fabiang/zf-localize-helper/license)](https://packagist.org/packages/fabiang/zf-localize-helper)
 
 ## Requirements
 
@@ -29,7 +30,7 @@ Put the following into your plugin managers config (e.g. `config/autoload/i18n.g
 
 return [
     'translator' => [
-        'locale' => 'en_UE', // this locale will be passed
+        'locale' => 'en_US', // this locale will be passed
     ],
     'validators' => [
         'initializers' => [
@@ -50,7 +51,7 @@ return [
 
 ```
 
-You can configure the helper for each type of plugin by removing or adding
+You can configure the initializer for each type of plugin by removing or adding
 it to the ValidatorManager/FilterManager/ViewHelperManager config above.
 
 
