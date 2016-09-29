@@ -32,6 +32,7 @@
         "zendframework/zend-modulemanager": "^2.7",
         "zendframework/zend-mvc": "^2.0 || ^3.0",
         "zendframework/zend-mvc-i18n": "^0.1.0 || ^1.0",
+        "zendframework/zend-router": "^2.7 || ^3.0",
         "zendframework/zend-serializer": "^2.7",
         "zendframework/zend-view": "^2.8"
     },

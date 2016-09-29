@@ -68,7 +68,7 @@ class FeatureContext implements Context
         $modules = [];
 
         // ZF3
-        if (class_exists('Zend\I18n\Module')) {
+        if (class_exists('Zend\Mvc\I18n\Module')) {
             $modules = [
                 'Zend\I18n',
                 'Zend\Mvc\I18n',
