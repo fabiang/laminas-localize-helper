@@ -24,17 +24,7 @@
     "require-dev": {
         "behat/behat": "^3.2.1",
         "phpunit/phpunit": "^4.8.26 || ^5.5.5",
-        "zendframework/zend-console": "^2.6",
-        "zendframework/zend-escaper": "^2.5",
-        "zendframework/zend-http": "^2.5",
-        "zendframework/zend-i18n": "^2.7",
-        "zendframework/zend-log": "^2.8",
-        "zendframework/zend-modulemanager": "^2.7",
-        "zendframework/zend-mvc": "^2.0 || ^3.0",
-        "zendframework/zend-mvc-i18n": "^0.1.0 || ^1.0",
-        "zendframework/zend-router": "^2.7 || ^3.0",
-        "zendframework/zend-serializer": "^2.7",
-        "zendframework/zend-view": "^2.8"
+        "zendframework/zendframework": "^2.5 || ^3.0"
     },
     "autoload-dev": {
         "psr-4": {
