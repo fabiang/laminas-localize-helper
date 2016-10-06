@@ -3,9 +3,10 @@
 Initializer that passes your configured locale to all view helpers, validators
 and filters, so you don't have to do this every time.
 
-[![Build Status](https://travis-ci.org/fabiang/zf-localize-helper.svg?branch=master)](https://travis-ci.org/fabiang/zf-localize-helper)
 [![Latest Stable Version](https://poser.pugx.org/fabiang/zf-localize-helper/version)](https://packagist.org/packages/fabiang/zf-localize-helper)
 [![License](https://poser.pugx.org/fabiang/zf-localize-helper/license)](https://packagist.org/packages/fabiang/zf-localize-helper)
+[![Dependency Status](https://gemnasium.com/badges/github.com/fabiang/zf-localize-helper.svg)](https://gemnasium.com/github.com/fabiang/zf-localize-helper)
+[![Build Status](https://travis-ci.org/fabiang/zf-localize-helper.svg?branch=master)](https://travis-ci.org/fabiang/zf-localize-helper)
 
 ## Requirements
 
