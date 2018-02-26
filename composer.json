@@ -4,10 +4,13 @@
     "type": "library",
     "license": "BSD-2-Clause",
     "keywords": [
-        "Zend Framework",
-        "I18n",
-        "Translation",
-        "Localization"
+        "zf2",
+        "module",
+        "zf2-module",
+        "zf3-module",
+        "zend-framework",
+        "i18n",
+        "localization"
     ],
     "authors": [
         {
