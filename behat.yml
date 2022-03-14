@@ -1,7 +1,7 @@
 default:
   suites:
     localizeHelper:
-      paths: [ %paths.base%/tests/features/ ]
+      paths: [ "%paths.base%/tests/features/" ]
       contexts:
         - Fabiang\LocalizeHelper\Behat\FeatureContext
   testers:

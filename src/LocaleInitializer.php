@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2016 Fabian Grutschus. All rights reserved.
+ * Copyright 2016-2022 Fabian Grutschus. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -28,32 +28,28 @@
  * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the copyright holders.
  *
- * @author    Fabian Grutschus <f.grutschus@lubyte.de>
- * @copyright 2016 Fabian Grutschus. All rights reserved.
- * @license   BSD-2-Clause
- * @link      https://github.com/fabiang/zf-localize-helper
+ * @link      https://github.com/fabiang/laminas-localize-helper
  */
+
+declare(strict_types=1);
 
 namespace Fabiang\LocalizeHelper;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\InitializerInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Filter\FilterInterface;
-use Zend\View\Helper\HelperInterface;
+use Laminas\Filter\FilterInterface;
+use Laminas\Mvc\I18n\Translator;
+use Laminas\ServiceManager\Initializer\InitializerInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\View\Helper\HelperInterface;
+
+use function method_exists;
 
 class LocaleInitializer implements InitializerInterface
 {
-    /**
-     * @var string
-     */
-    protected $locale = null;
+    protected ?string $locale = null;
 
-    /**
-     * @var string[]
-     */
-    protected $supportedInterfaces = [
+    /** @var string[] */
+    protected array $supportedInterfaces = [
         ValidatorInterface::class,
         FilterInterface::class,
         HelperInterface::class,
@@ -62,7 +58,7 @@ class LocaleInitializer implements InitializerInterface
     /**
      * {@inheritDoc}
      */
-    public function __invoke(ContainerInterface $container, $instance)
+    public function __invoke(ContainerInterface $container, $instance): void
     {
         foreach ($this->supportedInterfaces as $interface) {
             if ($instance instanceof $interface) {
@@ -76,29 +72,13 @@ class LocaleInitializer implements InitializerInterface
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function initialize($instance, ServiceLocatorInterface $serviceLocator)
+    private function getLocale(ContainerInterface $container): ?string
     {
-        if (method_exists($serviceLocator, 'getServiceLocator')) {
-            $serviceLocator = $serviceLocator->getServiceLocator();
-        }
-
-        $this($serviceLocator, $instance);
-    }
-
-    /**
-     * @param ContainerInterface $container
-     * @return string
-     */
-    private function getLocale(ContainerInterface $container)
-    {
-        if (!$container->has('MvcTranslator')) {
+        if (! $container->has('MvcTranslator')) {
             return null;
         }
 
-        /* @var $translator \Zend\Mvc\I18n\Translator */
+        /** @var Translator $translator */
         $translator = $container->get('MvcTranslator')->getTranslator();
 
         if (method_exists($translator, 'getLocale')) {

@@ -1,2 +1,5 @@
 composer.phar
 /vendor/
+
+.phpunit.result.cache
+.phpcs-cache

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2016 Fabian Grutschus. All rights reserved.
+ * Copyright 2016-2022 Fabian Grutschus. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -28,32 +28,29 @@
  * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the copyright holders.
  *
- * @author    Fabian Grutschus <f.grutschus@lubyte.de>
- * @copyright 2016 Fabian Grutschus. All rights reserved.
- * @license   BSD-2-Clause
- * @link      https://github.com/fabiang/zf-localize-helper
+ * @link      https://github.com/fabiang/laminas-localize-helper
  */
+
+declare(strict_types=1);
 
 namespace Fabiang\LocalizeHelper\Behat;
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\Behat\Tester\Exception\PendingException;
-use Zend\Mvc\Application;
-use PHPUnit_Framework_Assert as Assert;
+use Fabiang\LocalizeHelper\LocaleInitializer;
+use Laminas\Mvc\Application;
+use Laminas\Mvc\I18n\Module;
+use PHPUnit\Framework\Assert;
+
+use function class_exists;
+use function date_default_timezone_set;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context
 {
-    /**
-     * @var string
-     */
-    private $locale;
-
-    private $plugin;
+    private string $locale;
+    private object $plugin;
 
     /**
      * Initializes context.
@@ -70,7 +67,7 @@ class FeatureContext implements Context
     /**
      * @Given locale is :locale
      */
-    public function localeIs($locale)
+    public function localeIs(string $locale): void
     {
         $this->locale = $locale;
     }
@@ -78,7 +75,7 @@ class FeatureContext implements Context
     /**
      * @When I request plugin :name from :pluginManager
      */
-    public function iRequestPluginFrom($name, $pluginManager)
+    public function iRequestPluginFrom(string $name, string $pluginManager): void
     {
         $this->plugin = $this->getApplication()
             ->getServiceManager()
@@ -89,26 +86,23 @@ class FeatureContext implements Context
     /**
      * @Then Locale of plugin should be :locale
      */
-    public function localeOfPluginShouldBe($locale)
+    public function localeOfPluginShouldBe(string $locale): void
     {
         Assert::assertSame($locale, $this->plugin->getLocale());
     }
 
-    /**
-     * @return Application
-     */
-    public function getApplication()
+    public function getApplication(): Application
     {
         $modules = [];
 
         // ZF3
-        if (class_exists('Zend\Mvc\I18n\Module')) {
+        if (class_exists(Module::class)) {
             $modules = [
-                'Zend\I18n',
-                'Zend\Mvc\I18n',
-                'Zend\Validator',
-                'Zend\Filter',
-                'Zend\Router',
+                'Laminas\I18n',
+                'Laminas\Mvc\I18n',
+                'Laminas\Validator',
+                'Laminas\Filter',
+                'Laminas\Router',
             ];
         }
 
@@ -116,25 +110,25 @@ class FeatureContext implements Context
             'modules'                 => $modules,
             'module_listener_options' => [
                 'extra_config' => [
-                    'translator' => [
+                    'translator'   => [
                         'locale' => $this->locale,
                     ],
-                    'validators' => [
+                    'validators'   => [
                         'initializers' => [
-                            \Fabiang\LocalizeHelper\LocaleInitializer::class,
-                        ]
+                            LocaleInitializer::class,
+                        ],
                     ],
-                    'filters' => [
+                    'filters'      => [
                         'initializers' => [
-                            \Fabiang\LocalizeHelper\LocaleInitializer::class,
-                        ]
+                            LocaleInitializer::class,
+                        ],
                     ],
                     'view_helpers' => [
                         'initializers' => [
-                            \Fabiang\LocalizeHelper\LocaleInitializer::class,
-                        ]
-                    ]
-                ]
+                            LocaleInitializer::class,
+                        ],
+                    ],
+                ],
             ],
         ]);
     }
