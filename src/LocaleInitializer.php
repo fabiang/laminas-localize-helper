@@ -35,12 +35,12 @@ declare(strict_types=1);
 
 namespace Fabiang\LocalizeHelper;
 
-use Interop\Container\ContainerInterface;
 use Laminas\Filter\FilterInterface;
 use Laminas\Mvc\I18n\Translator;
 use Laminas\ServiceManager\Initializer\InitializerInterface;
 use Laminas\Validator\ValidatorInterface;
 use Laminas\View\Helper\HelperInterface;
+use Psr\Container\ContainerInterface;
 
 use function method_exists;
 
