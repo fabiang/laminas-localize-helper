@@ -3,6 +3,7 @@
 Initializer that passes your configured locale to all view helpers, validators
 and filters, so you don't have to do this every time.
 
+[![Continuous Integration](https://github.com/fabiang/laminas-localize-helper/actions/workflows/ci.yml/badge.svg)](https://github.com/fabiang/laminas-localize-helper/actions/workflows/ci.yml)
 [![Latest Stable Version](https://poser.pugx.org/fabiang/laminas-localize-helper/version)](https://packagist.org/packages/fabiang/laminas-localize-helper)
 [![License](https://poser.pugx.org/fabiang/laminas-localize-helper/license)](https://packagist.org/packages/fabiang/laminas-localize-helper)
 
