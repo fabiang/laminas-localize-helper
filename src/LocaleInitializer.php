@@ -40,6 +40,7 @@ use Laminas\Mvc\I18n\Translator;
 use Laminas\ServiceManager\Initializer\InitializerInterface;
 use Laminas\Validator\ValidatorInterface;
 use Laminas\View\Helper\HelperInterface;
+use Override;
 use Psr\Container\ContainerInterface;
 
 use function method_exists;
@@ -58,6 +59,7 @@ class LocaleInitializer implements InitializerInterface
     /**
      * {@inheritDoc}
      */
+    #[Override]
     public function __invoke(ContainerInterface $container, $instance): void
     {
         foreach ($this->supportedInterfaces as $interface) {
