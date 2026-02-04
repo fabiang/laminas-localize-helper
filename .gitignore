@@ -2,4 +2,7 @@ composer.phar
 composer.lock
 /vendor/
 .phpunit.result.cache
+.phpunit.cache/
 .phpcs-cache
+*.orig
+*.bak
